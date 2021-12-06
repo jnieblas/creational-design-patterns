@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Statement implements Cloneable{
 
-    private String sql;
-    private List<String> parameters;
-    private Record record;
+    private final String sql;
+    private final List<String> parameters;
+    private final Record record;
 
     public Statement(String sql, List<String> parameters, Record record) {
         this.sql = sql;

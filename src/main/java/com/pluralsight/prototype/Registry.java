@@ -1,10 +1,11 @@
 package main.java.com.pluralsight.prototype;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Registry {
 
-    private Map<String, Item> items = new HashMap<String, Item>();
+    private final Map<String, Item> items = new HashMap<>();
 
     public Registry() {
         loadItems();
@@ -13,6 +14,11 @@ public class Registry {
     public Item createItem(String type) {
         Item item = null;
 
+        try {
+            item = (Item)(items.get(type)).clone();
+        } catch(CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         return item;
     }
 
