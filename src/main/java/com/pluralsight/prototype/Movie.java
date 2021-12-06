@@ -4,7 +4,7 @@ public class Movie extends Item {
 
     private String runtime;
 
-    private String getRuntime() {
+    public String getRuntime() {
         return runtime;
     }
 
